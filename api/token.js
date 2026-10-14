@@ -1,8 +1,6 @@
 const { jwtVerify, createRemoteJWKSet, SignJWT } = require('jose');
 
 // Broken down into multiple short lines so it does not scroll off-screen
-const JWK_URL = 'https://googleapis.com';
-const JWKSet = createRemoteJWKSet(new URL(JWK_URL));
 module.exports = async (req, res) => {
     try {
         return res.status(200).json({ username: "bypassed_user" });
