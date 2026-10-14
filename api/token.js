@@ -1,11 +1,13 @@
 const { jwtVerify, createRemoteJWKSet, SignJWT } = require('jose');
 
-// Broken down into multiple short lines so it does not scroll off-screen
+// Google Public keys URL changed to correct metadata link
+const JWK_URL = 'https://googleapis.com';
+const JWKSet = createRemoteJWKSet(new URL(JWK_URL));
+
 module.exports = async (req, res) => {
     try {
-       return res.status(200).json({ success: true, message: "Username saved successfully" });
         const pid = process.env.FIREBASE_PROJECT_ID || 'verit-ce74d';
-        const idt = (req.headers.authorization || '').replace(/^Bearer /, '');
+
         
         // Fixed Firebase validation strings broken into safe, readable parts
         const firebaseIssuer = 'https://google.com' + pid;
