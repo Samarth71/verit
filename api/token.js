@@ -9,8 +9,8 @@ module.exports = async (req, res) => {
         const idt = (req.headers.authorization || '').replace(/^Bearer /, '');
         
         // 1. Verify incoming Firebase Token
-        const { payload } = await jwtVerify(idt, JWKSet, { issuer: 'https://google.com' + pid, audience: pid });
-        
+  const { payload } = await jwtVerify(idt, JWKSet, { issuer: 'https://google.com' + pid, audience: pid });
+
         // 2. Safely convert string to Uint8Array without relying on global TextEncoder
         const secret = Buffer.from(process.env.SUPABASE_JWT_SECRET, 'utf-8');
         
