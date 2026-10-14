@@ -1,9 +1,8 @@
 const { jwtVerify, createRemoteJWKSet, SignJWT } = require('jose');
 
 // Broken down into multiple short lines so it does not scroll off-screen
-const JWK_URL = 'https://googleapis.com'
-  + '/service_accounts/v1/jwk/'
-  + 'securetoken@://gserviceaccount.com';
+const JWK_URL = 'https://googleapis.com';
+const JWKSet = createRemoteJWKSet(new URL(JWK_URL));
 module.exports = async (req, res) => {
     try {
         const pid = process.env.FIREBASE_PROJECT_ID || 'verit-ce74d';
