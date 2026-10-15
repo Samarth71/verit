@@ -1,0 +1,22 @@
+{
+  "name": "Verit",
+  "short_name": "Verit",
+  "description": "Host code, track every change and deploy websites to a live link.",
+  "id": "/",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#04100f",
+  "theme_color": "#04100f",
+  "categories": ["developer", "productivity"],
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ],
+  "shortcuts": [
+    { "name": "New repository", "short_name": "New repo", "url": "/#/new", "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Explore", "url": "/#/explore", "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }] }
+  ]
+}
