@@ -1,4 +1,4 @@
-/* Public values (they are also in index.html). Environment variables override them if set. */
+]/* Public values (they are also in index.html). Environment variables override them if set. */
 const DEFAULT_URL = 'https://zeljesglqeaqlxonmqvw.supabase.co';
 const DEFAULT_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InplbGplc2dscWVhcWx4b25tcXZ3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTE5NDE0NTMsImV4cCI6MjEwNzUxNzQ1M30.CV_HCDhvYT2eWd-dDLl1MYzc4SlVYb3K9uOS3OPfsuQ';
 /* Open /api/health after deploying. It checks your settings and tests the Supabase connection. It never shows secrets. */
