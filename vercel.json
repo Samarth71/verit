@@ -5,11 +5,12 @@
     { "source": "/manifest.webmanifest", "headers": [{ "key": "Content-Type", "value": "application/manifest+json" }] }
   ],
   "rewrites": [
-    { "source": "/s/:slug/:path*", "destination": "/api/serve?slug=:slug&p=1&path=:path*" },
+    { "source": "/s/:slug", "destination": "/api/serve?slug=:slug&p=1&path=" },
+    { "source": "/s/:slug/(.*)", "destination": "/api/serve?slug=:slug&p=1&path=$2" },
     {
-      "source": "/:path*",
+      "source": "/(.*)",
       "has": [{ "type": "host", "value": "(?<slug>(?!www\\.)[a-z0-9-]+)\\.YOURDOMAIN\\.com" }],
-      "destination": "/api/serve?slug=:slug&path=:path*"
+      "destination": "/api/serve?slug=:slug&path=$1"
     }
   ]
 }
