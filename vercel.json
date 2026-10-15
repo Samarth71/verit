@@ -1,0 +1,15 @@
+{
+  "functions": { "api/vercel.js": { "maxDuration": 60 } },
+  "headers": [
+    { "source": "/sw.js", "headers": [{ "key": "Cache-Control", "value": "no-cache" }, { "key": "Service-Worker-Allowed", "value": "/" }] },
+    { "source": "/manifest.webmanifest", "headers": [{ "key": "Content-Type", "value": "application/manifest+json" }] }
+  ],
+  "rewrites": [
+    { "source": "/s/:slug/:path*", "destination": "/api/serve?slug=:slug&p=1&path=:path*" },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "(?<slug>(?!www\\.)[a-z0-9-]+)\\.YOURDOMAIN\\.com" }],
+      "destination": "/api/serve?slug=:slug&path=:path*"
+    }
+  ]
+}
