@@ -37,7 +37,7 @@
       "has": [
         {
           "type": "host",
-          "value": "(?<slug>(?!www\\.)[a-z0-9-]+)\\.YOURDOMAIN\\.com"
+          "value": "^(?!www\\.)(?<slug>[a-z0-9-]+)\\.YOURDOMAIN\\.com$"
         }
       ],
       "destination": "/api/serve?slug=:slug&path=$1"

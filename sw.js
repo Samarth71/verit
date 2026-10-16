@@ -9,7 +9,7 @@ self.addEventListener('activate', e => {
 });
 self.addEventListener('fetch', e => {
   const r = e.request, u = new URL(r.url);
-  if (r.method !== 'GET' || u.origin !== location.origin || u.pathname.startsWith('/api/') || u.pathname.startsWith('/s/')) return;
+  if (r.method !== 'GET' || u.origin !== location.origin || u.pathname.startsWith('/api/') || u.pathname.startsWith('/s/') || u.pathname === '/verit.config.json') return;
   if (r.mode === 'navigate') {
     e.respondWith(
       fetch(r).then(x => { const c = x.clone(); caches.open(V).then(ca => ca.put('/index.html', c)); return x; })
